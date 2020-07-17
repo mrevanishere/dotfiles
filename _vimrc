@@ -3,12 +3,24 @@ set encoding=utf-8
 set fileencoding=utf-8
 set clipboard=unnamedplus
 syntax on
-let mapleader = "\\"
+let mapleader = ","
 
 " remaps
 nnoremap <c-s> :w<cr>
 noremap \s :source %<cr>
 inoremap <c-q> <esc>
+inoremap jk <Esc>
+noremap! <Leader>l <right> 
+noremap! <Leader>h <left> 
+noremap! <Leader>k <up> 
+noremap! <Leader>j <down> 
+inoremap <s-tab> <c-d>
+nnoremap <s-tab> <<
+nnoremap <tab> >>
+vnoremap <tab> >>
+vnoremap <s-tab> << 
+
+
 " QOL Windows
 source $VIMRUNTIME\mswin.vim
 behave mswin
@@ -90,12 +102,19 @@ Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
 """"""
 " PLUGIN CONFIG
 """"""
+
+" EasyAlign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+
 
 " NERDTree
 autocmd vimenter * NERDTree
