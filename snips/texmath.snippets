@@ -1,0 +1,615 @@
+priority 2
+#
+# General LaTeX
+#
+
+# ; for math
+# , for text
+# ' for alternate
+# . for alternate
+
+# ;t is trig
+# ;g is greek letters
+# ;s is set
+# ;m is matricies
+# ;i is integrals
+# ;d is dots (du is derivative)
+# ;k is for delimiters (kugiri)
+
+snippet ,p "paragraph" wA
+\par
+
+endsnippet
+
+snippet sp "subparagraph" 
+\subparagraph 
+
+endsnippet
+
+snippet ,s "section" wA
+\section{${1}}
+	${2}
+endsnippet
+
+snippet ss "subsection" 
+\subsection{${1}}
+	${2}
+endsnippet
+
+snippet sss "subsubsection" 
+\subsubsection{${1}}
+	${2}
+endsnippet
+
+snippet ,ae "align equals" wA
+&= 
+endsnippet
+
+snippet ,aa "align ampersand only" wA
+&  
+endsnippet
+
+snippet ,t "in math text" iA
+\text{${0}}
+endsnippet
+
+#don't use this use tempaltes instead
+snippet dclas "Document Class"
+\documentclass[${1:name.ext}]{${2:class}}
+endsnippet
+
+snippet "\\?b(egin)?" "begin{} / end{}" br
+\begin{${1:something}}
+${0}
+\end{$1}
+endsnippet
+#
+# Math Environments
+#
+
+global !p
+texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS',
+'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS',
+'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC',
+'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES',
+'AmsFS', 'AmsGS' ]]
+
+texIgnoreMathZones = ['texMathText']
+
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+def math():
+	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+	try:
+		first = next(
+            i for i in reversed(synstackids)
+            if i in texIgnoreMathZoneIds or i in texMathZoneIds
+        )
+		return first != ignore
+	except StopIteration:
+		return False
+endglobal
+
+# Packages
+
+snippet pic "Just a picture where it should be" b
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{${1:name.ext}}
+	\caption{${1/(\w+)\.\w+/\u$1/}}%
+\end{figure}
+${2}
+endsnippet
+
+snippet ,aln "Align *" iA
+\begin{align*}
+	${0}
+\end{align*}
+endsnippet
+
+#################
+# TeX Math      #
+#################
+
+# Operations
+
+snippet ;do "Cdot" iA
+\cdot 
+endsnippet
+
+snippet ;dv "dots vertical" iA
+\vdots 
+endsnippet
+
+snippet ;dd "dots diagonal" iA
+\ddots 
+endsnippet
+
+snippet ;dg "dots ground" iA
+\dots 
+endsnippet
+
+snippet ;dh "dots horizontal" iA
+\cdots
+endsnippet
+
+snippet mk "Math" iA
+$ ${0} $
+endsnippet
+
+snippet eqn "begin{equation} / end{equation}" wA
+\begin{equation}
+	${0}
+\end{equation}
+endsnippet
+
+#optimize this to identify a12 to be a^{12} and a.12 to be a_{12}
+
+context "math()"
+snippet 'o "to the power of" iA
+^{${1}}
+endsnippet
+
+context "math()"
+snippet 'u "subscript, underscore" iA 
+_{${1}}
+endsnippet
+
+context "math()"
+snippet ;u "subscript simple" iA
+_
+endsnippet
+
+context "math()"
+snippet ;o  "super simple" iA
+^
+endsnippet
+
+snippet ;2 "square" iA
+^2
+endsnippet
+
+snippet ;3 "cubed" iA
+^3 
+endsnippet
+
+snippet ;sr "sqrt" iA
+\sqrt{${1}} 
+endsnippet
+
+snippet ;a "add" iA
++
+endsnippet
+
+snippet ;e "equals" iA
+= 
+endsnippet
+
+snippet ;c "cross" iA
+\times 
+endsnippet
+
+context "math()"
+snippet // "fraction  " iA
+\frac{$1}{$2}$0 
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+context "math()"
+priority 1000
+snippet '^.*\)/' "() Fraction" wrA
+`!p
+stripped = match.string[:-1]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+# Notation
+
+snippet ,pw "piecewise (cases)" iA
+\begin{cases}
+	${0}
+\end{cases}
+endsnippet
+
+snippet ;ks "parenthesis" iA
+(${1})${2}
+endsnippet
+
+snippet ;kb "brackets" iA
+{${0}}
+endsnippet
+
+context "math()"
+priority 10
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+context "math()"
+priority 100
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+priority 10
+snippet "hat" "hat" riA
+\hat{$1}$0
+endsnippet
+
+context "math()"
+priority 100
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet ;v "vector arrow auto" iA
+\vec 
+endsnippet
+
+snippet ,v "vector bold auto" iA
+\bm{${1}}
+endsnippet
+
+snippet ,na "Nabla Gradient" wA
+\nabla 
+endsnippet
+
+snippet mc "mathcal Fancy Letters"
+\mathcal{${1}}
+endsnippet
+
+snippet mb "mathbb"
+\mathbb{${1}}
+endsnippet
+
+snippet ;le "Less than equal to" iA
+\le 
+endsnippet
+
+snippet ;ne "not equal to" iA 
+\ne 
+endsnippet
+
+snippet ;ge "Greater than equal to " iA
+\ge 
+endsnippet
+
+snippet ;lt "Less than " iA
+\lt 
+endsnippet
+
+snippet ;gt "Greater than " iA
+\gt 
+endsnippet
+
+#
+# Discrete Math
+#
+
+snippet ;bc ";b bracket, c curly brace" iA
+\\{${1}\\}
+endsnippet
+
+snippet ;so "empty set" iA
+\emptyset 
+endsnippet
+
+snippet ;su "set union" iA
+\cup 
+endsnippet
+
+snippet ;si "set intersection" iA
+\cap 
+endsnippet
+
+
+#
+# Trigonometry
+#
+
+context "math()"
+snippet ;tc "cosine" iA
+\cos 
+endsnippet
+
+context "math()"
+snippet ;ts "sine" iA
+\sin 
+endsnippet
+
+context "math()"
+snippet ;tt "tangent" iA
+\tan 
+endsnippet
+
+#
+# Calculus
+#
+
+snippet ;del "gradient nabla del" iA
+\nabla 
+endsnippet
+
+snippet pinf "infinity" iA
+\infty 
+endsnippet
+
+snippet ninf "negative infinity"  iA
+-\infty 
+endsnippet
+
+snippet lim "limit"
+\lim_{${1}}${2}
+endsnippet
+
+snippet sum "Summation"
+\sum_{${1}}^{${2}}${3}
+endsnippet
+
+snippet ;i "Indefinite Integral" i
+\int 
+endsnippet
+
+snippet ;io "Indefinite Integral Over" iA
+\int_ 
+endsnippet
+		
+snippet ;id "Definite Integral" iA
+\int_{${1}}^{${2}}
+endsnippet
+
+snippet ;ii "Double Integral over " wA
+\iint_
+endsnippet
+
+snippet ;i3 "Triple Integral over" wA
+\iiint_
+endsnippet
+
+snippet ;im "Improper Integral 0-inf" wA
+\int_0^{\infty}
+endsnippet
+
+snippet ;pu "Partial Derivative" iA
+\frac{\partial ${1}}{\partial ${2}} ${3}
+endsnippet
+
+snippet ;du "Derivative" iA
+\frac{d${1}}{d${2}} ${3}
+endsnippet
+
+# Theorems
+
+snippet ;tcurl "Stoke's Theorem" iA
+\iint_S\text{curl}\vec F\times
+endsnippet
+
+#
+# Differential Equations
+#
+
+snippet ;lap "Laplace LHS" iA
+\mathcal{L}\{f(t)\}
+endsnippet
+
+snippet ;lin "Limit to infinity" iA
+<UNIMPLEMENTED>  
+endsnippet
+
+# 
+#  Linear Algebra
+#
+
+snippet ;bv "\big<" iA
+\big<${1}\big>
+endsnippet
+
+snippet ;m1c "Matrix 1 col (vector)" iA
+\begin{bmatrix}
+${1}\\
+${2}\\
+\end{bmatrix}
+endsnippet
+
+snippet ;m1r "Matrix 1 row (row of vectors)" iA
+\begin{bmatrix}
+${1} & ${2} & ${3}
+\end{bmatrix}
+endsnippet
+
+snippet ;m2 "2x2 Matrix" wA
+\begin{bmatrix}
+${1}&${2}\\\\
+${3}&${4}\\\\
+\end{bmatrix}${5}
+endsnippet
+
+snippet ;m3 "3x3 Matrix" wA
+\begin{vmatrix}
+${1}&${2}&${3}\\\\
+${4}&${5}&${6}\\\\
+${7}&${8}&${9}\\\\
+\end{vmatrix}${10}
+endsnippet
+
+snippet ;mv "m VMatrix" iA
+\begin{vmatrix}
+${0}
+\end{vmatrix}
+endsnippet
+
+snippet ;mp "p VMatrix" iA
+\begin{pmatrix}
+${0}
+\end{pmatrix}
+endsnippet
+
+snippet ;mb "b VMatrix" iA
+\begin{bmatrix}
+${0}
+\end{bmatrix}
+endsnippet
+
+
+snippet ;mjs "Jacobian spherical matrix" iA
+\frac{\partial(x,y,z)}{\partial(\rho,\theta,\phi)} = \begin{vmatrix}
+\frac{\partial x}{\partial \rho} &\frac{\partial x}{\partial \theta } &\frac{\partial x}{\partial \phi}\\\\
+\frac{\partial y}{\partial \rho} &\frac{\partial y}{\partial \theta } &\frac{\partial y}{\partial \phi}\\\\
+\frac{\partial z}{\partial \rho} &\frac{\partial z}{\partial \theta } &\frac{\partial z}{\partial \phi}\\\\ 
+\end{vmatrix}
+endsnippet
+
+# Not Working
+
+snippet big "math delimiter"
+\big${1}${3}\big${2}
+endsnippet
+# idea but need opposite delimiter to do this
+# snippet "\\?big?" "big / small" br
+# \big{${1:something}}${0:${VISUAL}}\big{$1}
+# endsnippet
+
+
+#
+# Greek Symbols 
+#
+
+context "math()" 
+snippet ,ga "alpha" iA 
+\alpha
+endsnippet
+
+context "math()"
+snippet ,gb "beta" iA 
+\beta
+endsnippet
+
+snippet ,gG "Gamma" iA
+\Gamma
+endsnippet
+
+context "math()" 
+snippet ,gg "gamma" iA
+\gamma
+endsnippet
+
+snippet De "Delta"
+\Delta
+endsnippet
+
+snippet de "delta"
+\delta
+endsnippet
+
+snippet ep "epsilon"
+\epsilon
+endsnippet
+
+snippet ze "zeta"
+\zeta
+endsnippet
+
+snippet et "eta"
+\eta
+endsnippet
+
+snippet th "theta" 
+\theta
+endsnippet
+
+context "math()"
+snippet ,gth "theta" iA 
+\theta
+endsnippet
+
+snippet Th "Theta"
+\Theta
+endsnippet
+
+snippet ka "kappa"
+\kappa
+endsnippet
+
+context "math()"
+snippet ,gl "lambda" iA
+\lambda
+endsnippet
+
+snippet La "Lambda"
+\Lambda
+endsnippet
+
+context "math()"
+snippet ,gm "miu" iA
+\mu
+endsnippet
+
+snippet xi "zai"
+\xi
+endsnippet
+
+context "math()"
+snippet ,gp "pi" iA 
+\pi
+endsnippet
+
+context "math()"
+snippet ,gr "rho" iA 
+\rho
+endsnippet
+
+context "math()"
+snippet ,gs "sigma" iA
+\sigma
+endsnippet
+
+context "math()"
+snippet ,gta "tau" iA
+\tau
+endsnippet
+
+context "math()"
+snippet ,gf "phi" iA 
+\phi
+endsnippet
+
+snippet Ph "phi" 
+\Phi
+endsnippet
+
+snippet ,gc "chi" iA
+\chi
+endsnippet
+
+snippet ps "psi" 
+\psi
+endsnippet
+
+snippet Ps "Psi" 
+\Psi
+endsnippet
+
+snippet om "omega" 
+\omega
+endsnippet
+
+snippet Om "Omega" 
+\omega
+endsnippet
+

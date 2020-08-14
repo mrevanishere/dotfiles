@@ -1,0 +1,54 @@
+set encoding=utf-8
+set fileencoding=utf-8
+set clipboard=unnamedplus
+syntax on
+let mapleader = ","
+
+" remaps
+nnoremap <c-s> :w<cr>
+noremap \s :source %<cr>
+inoremap <c-q> <esc>
+inoremap jk <Esc>
+noremap! <Leader>l <right>
+noremap! <Leader>h <left>
+noremap! <Leader>k <up
+noremap! <Leader>j <down>
+inoremap <s-tab> <c-d>
+nnoremap <s-tab> <<
+nnoremap <tab> >>
+vnoremap <tab> >>
+
+" QOL Windows
+source $VIMRUNTIME\mswin.vim
+behave mswin
+
+" Readability
+set lines=70 columns=110
+syntax enable
+set ruler
+set number
+set wrap
+set linebreak
+set cursorline
+set number relativenumber
+set nu rnu
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+" Tabs
+set expandtab
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" QOL
+" Turns off vim error signals
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=
+" Turns off auto comment next line for vim
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
