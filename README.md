@@ -70,7 +70,8 @@ Windows preferences:
 		  
 		Sound -20db  
   
-	General Settings  
+	General Settings
+		[turn off automatic file view](https://www.youtube.com/watch?v=t2eN3kq2Dm8)
   
 		Japanese IME primary  
 	  
