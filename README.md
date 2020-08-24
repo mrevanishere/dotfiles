@@ -22,18 +22,44 @@ See [vim-plug](https://github.com/junegunn/vim-plug) to install vim-plug
 optimize nvidia control panel brightness to raise monitor brightness
 Brave (Chrome, Opera, Edge, Unchromium)
 
-	Addons:
-	Vimium
-	Leoh New Tab
-	Volume Master
-	Anki Quick Adder
-	Imagus
-	Video Speed Controller
-	Yomichan
-	DF Tube
 	uBlock Origin
-	
-Discord  
+
+	Settings:
+
+		on exit: delete cache/cookies
+
+	Addons:
+
+		Vimium
+
+		DF Tube
+
+		Imagus
+
+		Video Speed Controller
+
+		Decrease <
+
+		Increase >
+
+		Opacity .35
+
+		Volume Master
+
+		Delayed Gratification
+
+	Others:
+
+		ublock origin
+
+		Anki Adder
+
+		YomiChan
+
+		Leoh New Tab
+
+		Auto Text Expander + Overleaf + repl
+		Discord  
   
 Git  
   
