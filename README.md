@@ -20,6 +20,7 @@ See [vim-plug](https://github.com/junegunn/vim-plug) to install vim-plug
 
 ### General  
 optimize nvidia control panel brightness to raise monitor brightness
+
 Brave (Chrome, Opera, Edge, Unchromium)
 
 	uBlock Origin
