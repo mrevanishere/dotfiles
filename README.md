@@ -19,7 +19,7 @@ See [vim-plug](https://github.com/junegunn/vim-plug) to install vim-plug
 
 
 ### General  
-optimize nvidia control panel brightness to raise monitor brightness
+~optimize nvidia control panel brightness to raise monitor brightness~
 
 Brave (Chrome, Opera, Edge, Unchromium)
 
@@ -83,11 +83,19 @@ IntelliJ (PyCharm, CLion, IntelliJ IDEA)
 MikTeX, gVim , mupdf, SumatraPDF
   
 GARbro (game extraction)  
-  
-CHOCO  
-      
+
+PowerToys
+
+	Fancy Zones
+		
+	Keyboard Manager
+		
+		CAPS -> ESC
+		
+		Menu -> Alt Tab
+        
 Windows preferences:  
-	[[Change CAPSLOCK to CTRL or ESC or ALT](https://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/)]
+	~[[Change CAPSLOCK to CTRL or ESC or ALT](https://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/)]~
   
 	Sound
 	
@@ -95,7 +103,7 @@ Windows preferences:
 		  
 		Peace  
 		  
-		Sound -20db  
+		Sound -30db  
   
 	General Settings
 		[turn off automatic file view](https://www.youtube.com/watch?v=t2eN3kq2Dm8)
@@ -132,7 +140,7 @@ CPU: Intel Core it-8500 CPU @3.00 GHzb (6 core), UHD Graphics 630
   
 GPU: EVGA XC RTX 2070, GTX 960  
   
-Monitor 1: Gateway 1920x1200 60Hz  
+Monitor 1: Dell S-Series S2719DGF
   
 Monitor 2: Gateway 1920x1200 60Hz  
   
