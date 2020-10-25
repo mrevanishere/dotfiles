@@ -1,85 +1,84 @@
 set encoding=utf-8
 set fileencoding=utf-8
-set clipboard=unnamedplus
-syntax on
+"""""""""""""
+" Controls
+"""""""""""""
+set clipboard=unnamedplus " no buffer
 let mapleader = "."
-
 nnoremap <c-s> :w<cr>
 noremap \s :source %<cr>
 inoremap <c-q> <esc>
-
 " esc out of insert
-inoremap jk <Esc> 
+inoremap jk <Esc>  
 " new line below in insert
 inoremap jl <Esc><s-a><cr>
 " end of line in insert
 inoremap lj <Esc><s-a>
-
-" noremap! <Leader>l <right> 
-" noremap! <Leader>h <left> 
-" noremap! <Leader>k <up> 
-" noremap! <Leader>j <down> 
-"
+" Fixing tabs
 inoremap <s-tab> <c-d>
 nnoremap <s-tab> <<
 nnoremap <tab> >>
 vnoremap <tab> >>
 vnoremap <s-tab> << 
+set whichwrap+=<,>,h,l,[,] " go to next/previous if at end of line
+set backspace=indent,eol,start  
 
 
-" QOL Windows
-source $VIMRUNTIME\mswin.vim
-behave mswin
+" Tabs
+set nocindent 
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" set expandtab
+" Search
+set ignorecase
+set smartcase
 
+
+set wildmenu " auto complete
+set wildmode=longest,list,full " type of autocomplete
+
+""""""""""""""
 " Readability
+""""""""""""""
 set lines=70 columns=90
-syntax enable
-set ruler
-set number
-set wrap
+set colorcolumn=81,161 " column line length marker
+syntax on " syntax highlighting on
+syntax enable " enable syntax highlighting
+set ruler " enables r,c at bottom
+set number " enables line number
+set wrap " word wrap 
 set linebreak
-set cursorline
-set number relativenumber
-set nu rnu
+set cursorline " highlight current line
+set number relativenumber " set line num relative
+set nu rnu " set line num not relative
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber 
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
-" Tabs
-set nocindent 
-" set expandtab
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
-
-" Search
-set ignorecase
-set smartcase
-
 " Folding
-set foldmethod=indent
+set foldmethod=indent " fold type
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 
-" Control
-set whichwrap+=<,>,h,l,[,]
-set backspace=indent,eol,start  
-" Mapping to reload configuration
-nmap <leader>so :source $HOME\_vimrc<CR>
-set wildmenu
-set wildmode=longest,list,full
 
-" QOL
-" Turns off vim error signals
-set noeb vb t_vb=
-au GUIEnter * set vb t_vb=
-" Turns off auto comment next line for vim
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+
+""""""""""""""""""""" 
+" PLATFORM SPECIFIC 
+"""""""""""""""""""""
+
+" QOL 
+
+source $VIMRUNTIME\mswin.vim " allows for zxcv editing
+behave mswin
+
+set noeb vb t_vb= " Turns off vim error signals
+au GUIEnter * set vb t_vb= " Turns off vim error signals
+set formatoptions-=cro " Turns off auto comment next line for vim
 
 " Font and Windows shorcuts QOL
 if has("gui_running")
@@ -90,7 +89,7 @@ if has("gui_running")
 	elseif has("gui_macvim")
 		set guifont=Menlo\ Regular:h14
 	elseif has("gui_win32")
-		set guifont=Consolas:h14:cANSI
+		set guifont=Consolas:h11:cANSI
 
 	endif
 endif
@@ -106,8 +105,9 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+" Plug 'sonph/onehalf'
 " Plug 'tpope/vim-surround'
-" Plug 'preservim/nerdtree'
+" Plug 'preservim/nertree'
 " Plug 'junegunn/vim-easy-align'
 
 call plug#end()
@@ -126,11 +126,12 @@ call plug#end()
 
 " VimTeX
 let g:tex_flavor='latex'
- let g:vimtex_view_method='mupdf'
+let g:vimtex_view_method='mupdf'
 " let g:vimtex_view_mupdf_hook_view='ViewerPosition'
-" let g:vimtex_view_general_hook_view='ViewerPosition'
+" let g:vimtex_view_gener1al_hook_view='ViewerPosition'
 " let g:vimtex_view_general_viewer = 'SumatraPDF'
 " let g:vimtex_view_general_options='-reuse-instance -forward-search @tex @line @pdf'
+
 function! ViewerPosition() abort dict " VimTeX starting position
     call self.move ('10 10')
     call self.resize('1080 800')
@@ -154,9 +155,8 @@ let g:UltiSnipsEditSplit="vertical"
 " au FileType tex let b:AutoPairs = AutoPairsDefine({'$' : '$', '<' : '>'})
 
 " Base16
- colorscheme base16-mocha
+" colorscheme base16-mocha
 " colorscheme base16-flat
 " colorscheme base16-brushtrees-dark
-" colorscheme base16-brushtrees-dark
+colorscheme base16-nord
 
-filetype indent off
