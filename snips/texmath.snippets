@@ -3,13 +3,14 @@ priority 2
 # General LaTeX
 #
 
+# credit to https://castel.dev/ for some of these shortcuts
 # ; for math
 # , for text
 # ' for alternate
 # . for alternate
 
 # ;t is trig
-# ;g is greek letters
+# ,g is greek letters
 # ;s is set
 # ;m is matricies
 # ;i is integrals
@@ -18,7 +19,6 @@ priority 2
 
 snippet ,p "paragraph" wA
 \par
-
 endsnippet
 
 snippet sp "subparagraph" 
@@ -28,17 +28,14 @@ endsnippet
 
 snippet ,s "section" wA
 \section{${1}}
-	${2}
 endsnippet
 
 snippet ss "subsection" 
 \subsection{${1}}
-	${2}
 endsnippet
 
 snippet sss "subsubsection" 
 \subsubsection{${1}}
-	${2}
 endsnippet
 
 snippet ,ae "align equals" wA
@@ -108,6 +105,24 @@ snippet ,aln "Align *" iA
 \begin{align*}
 	${0}
 \end{align*}
+endsnippet
+
+snippet ,ans "answer boxed aligned" iA
+\boxed{
+\begin{align*}
+	${0}
+\end{align*}
+}
+endsnippet
+
+snippet ,ale "aligned" iA
+\begin{aligned}
+	${0}
+\end{aligned}
+endsnippet
+
+snippet ;;pi "pi" iA
+pp 
 endsnippet
 
 #################
@@ -298,26 +313,6 @@ snippet ;gt "Greater than " iA
 \gt 
 endsnippet
 
-#
-# Discrete Math
-#
-
-snippet ;bc ";b bracket, c curly brace" iA
-\\{${1}\\}
-endsnippet
-
-snippet ;so "empty set" iA
-\emptyset 
-endsnippet
-
-snippet ;su "set union" iA
-\cup 
-endsnippet
-
-snippet ;si "set intersection" iA
-\cap 
-endsnippet
-
 
 #
 # Trigonometry
@@ -416,6 +411,12 @@ endsnippet
 #  Linear Algebra
 #
 
+snippet ";([1-9])x([1-9])" "m x n empty matrix" iA
+\begin{bmatrix}
+
+\end{bmatrix}
+endsnippet
+
 snippet ;bv "\big<" iA
 \big<${1}\big>
 endsnippet
@@ -431,6 +432,10 @@ snippet ;m1r "Matrix 1 row (row of vectors)" iA
 \begin{bmatrix}
 ${1} & ${2} & ${3}
 \end{bmatrix}
+endsnippet
+
+snippet ;1r "1 row" iA
+${1} & ${2} & ${3}
 endsnippet
 
 snippet ;m2 "2x2 Matrix" wA
