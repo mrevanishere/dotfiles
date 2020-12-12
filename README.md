@@ -119,6 +119,8 @@ Windows preferences:
 		Clock: yyyy/mm/dd  
 		  
 		No clock on Taskbar  
+		
+		Change Langauge Locale → Language → Settings → Change System Locale
   
 ShareX (Windows)  
   
@@ -170,7 +172,7 @@ Ethernet: TP-Link Gigabit PCI Express Adapter
   
 Wifi: Qualcomm Atheros AR938x Wireless Network Adapter  
   
-Keyboard: Logitech G810  
+Keyboard: Drop + OKLB Preonic MX Kit V3
   
 Mouse: Logitech G600 MMO Mouse  
   
@@ -180,7 +182,7 @@ Phone: iPhone 6S Plus
   
 Laptop: Mac Book Pro 2012  
   
-Drawing Tablet: Huion
+Huion Inspiroy Q11K Wireless Graphic Drawing Tablet with 8192 Pressure Sensitivity
   
 ### Ubuntu  
 TeX
