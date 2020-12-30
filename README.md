@@ -1,6 +1,8 @@
 
+# dotfiles
+A place to hold all my settings for all programs / os / hardware that I use. Feel free to use.
 
-Content
+# Content
 -  [Vim](#vim)
 
 -  [General](#general)
@@ -19,7 +21,7 @@ See [vim-plug](https://github.com/junegunn/vim-plug) to install vim-plug
 
 
 ### General  
-optimize nvidia control panel brightness to raise monitor brightness
+~optimize nvidia control panel brightness to raise monitor brightness~
 
 Brave (Chrome, Opera, Edge, Unchromium)
 
@@ -39,11 +41,11 @@ Brave (Chrome, Opera, Edge, Unchromium)
 
 		Video Speed Controller
 
-		Decrease <
+			Decrease <
 
-		Increase >
+			Increase >
 
-		Opacity .35
+			Opacity .35
 
 		Volume Master
 
@@ -83,11 +85,19 @@ IntelliJ (PyCharm, CLion, IntelliJ IDEA)
 MikTeX, gVim , mupdf, SumatraPDF
   
 GARbro (game extraction)  
-  
-CHOCO  
-      
+
+PowerToys
+
+	Fancy Zones
+		
+	Keyboard Manager
+		
+		CAPS -> ESC
+		
+		Menu -> Alt Tab
+        
 Windows preferences:  
-	[[Change CAPSLOCK to CTRL or ESC or ALT](https://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/)]
+	~[[Change CAPSLOCK to CTRL or ESC or ALT](https://www.howtogeek.com/howto/windows-vista/disable-caps-lock-key-in-windows-vista/)]~
   
 	Sound
 	
@@ -95,7 +105,7 @@ Windows preferences:
 		  
 		Peace  
 		  
-		Sound -20db  
+		Sound -30db  
   
 	General Settings
 		[turn off automatic file view](https://www.youtube.com/watch?v=t2eN3kq2Dm8)
@@ -111,6 +121,8 @@ Windows preferences:
 		Clock: yyyy/mm/dd  
 		  
 		No clock on Taskbar  
+		
+		Change Langauge Locale → Language → Settings → Change System Locale
   
 ShareX (Windows)  
   
@@ -132,9 +144,18 @@ CPU: Intel Core it-8500 CPU @3.00 GHzb (6 core), UHD Graphics 630
   
 GPU: EVGA XC RTX 2070, GTX 960  
   
-Monitor 1: Gateway 1920x1200 60Hz  
+Monitor 1: Dell S-Series S2719DGF
   
 Monitor 2: Gateway 1920x1200 60Hz  
+
+	Settings: 
+	
+		* Theme: Cool
+		
+		* Contrast: 100
+		
+		* Brightness: 25
+		
   
 MOBO: MSI Z370 SLI Plus (MS-7B46) 2.0  
   
@@ -162,7 +183,7 @@ Ethernet: TP-Link Gigabit PCI Express Adapter
   
 Wifi: Qualcomm Atheros AR938x Wireless Network Adapter  
   
-Keyboard: Logitech G810  
+Keyboard: Drop + OKLB Preonic MX Kit V3
   
 Mouse: Logitech G600 MMO Mouse  
   
@@ -172,7 +193,7 @@ Phone: iPhone 6S Plus
   
 Laptop: Mac Book Pro 2012  
   
-Drawing Tablet: Huion
+Huion Inspiroy Q11K Wireless Graphic Drawing Tablet with 8192 Pressure Sensitivity
   
 ### Ubuntu  
 TeX
