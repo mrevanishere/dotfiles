@@ -1,6 +1,8 @@
 
+# dotfiles
+A place to hold all my settings for all programs / os / hardware that I use. Feel free to use.
 
-Content
+# Content
 -  [Vim](#vim)
 
 -  [General](#general)
@@ -39,11 +41,11 @@ Brave (Chrome, Opera, Edge, Unchromium)
 
 		Video Speed Controller
 
-		Decrease <
+			Decrease <
 
-		Increase >
+			Increase >
 
-		Opacity .35
+			Opacity .35
 
 		Volume Master
 
@@ -145,6 +147,15 @@ GPU: EVGA XC RTX 2070, GTX 960
 Monitor 1: Dell S-Series S2719DGF
   
 Monitor 2: Gateway 1920x1200 60Hz  
+
+	Settings: 
+	
+		* Theme: Cool
+		
+		* Contrast: 100
+		
+		* Brightness: 25
+		
   
 MOBO: MSI Z370 SLI Plus (MS-7B46) 2.0  
   
