@@ -191,7 +191,7 @@ Mouse: Logitech G600 MMO Mouse
   
 Mousepad: Logitech Hard  
   
-Phone: iPhone 6S Plus  
+Phone: iPhone 12 Pro Max, iPhone 6S Plus  
   
 Laptop: Mac Book Pro 2012  
   
