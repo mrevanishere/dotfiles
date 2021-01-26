@@ -108,7 +108,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim' " themes
 
 Plug 'lervag/vimtex' " latex compiler
-Plug 'SirVer/UltiSnips' " snippet engine
+" Plug 'SirVer/ultisnips' " ultisnips snippet engine
+"   warning: only works properly with proper Python dll and Perl installed.
 Plug 'honza/vim-snippets' " snippets 
 Plug 'jiangmiao/auto-pairs' " creates delimiter pairs
 
@@ -130,8 +131,8 @@ call plug#end()
 """"
 
 highlight Normal ctermbg=Black
-highlight CursorColumn ctermfg=White ctermbg=DarkGray cterm=bold
-highlight Cursor ctermfg=White ctermbg=DarkGray cterm=bold
+highlight CursorColumn ctermfg=Gray ctermbg=DarkGray cterm=bold
+highlight Cursor ctermfg=DarkGray ctermbg=DarkGray cterm=bold
 
 " Font and Windows shorcuts QOL
 if has("gui_running")
@@ -145,8 +146,10 @@ if has("gui_running")
 	
     colorscheme base16-flat
     highlight Normal guibg=#000000
-    highlight Cursor guibg=DarkGray gui=bold
+    highlight Cursor guibg=#3F3F3F guifg=White gui=bold
     highlight CursorLine guibg=#090909
+    highlight MatchParen guibg=#080808 guifg=White
+    highlight Conceal guibg=NONE gui=bold
    if has("gui_gtk2")
 		set guifont=Inconsolata\ h12
 	elseif has("gui_macvim")
@@ -216,6 +219,13 @@ set conceallevel=2 " conceals for LaTeX but may mess up other
 let g:tex_conceal='abdmg' 
 " accents, bold, delim, math, Greek, super/sub
 " abdmgs
+
+" VimTeX delete extra Tex Files
+augroup MyVimtex
+  autocmd!
+  autocmd User VimtexEventQuit call vimtex#latexmk#clean(0)
+augroup END
+
 
 
 
