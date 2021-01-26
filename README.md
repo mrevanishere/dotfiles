@@ -71,6 +71,10 @@ Notion
 Krita  
   
 Anki  
+
+OBS
+
+QMK
   	  	  
 IntelliJ (PyCharm, CLion, IntelliJ IDEA)  
   
@@ -80,7 +84,7 @@ IntelliJ (PyCharm, CLion, IntelliJ IDEA)
   
 	Vim Emulator → `Alt + Z`  
 	
-Other Programs: QMK, Yuzu, Dolphin, JoyToStick, TextShot, VirtualBox, BlueStacks, Equalizer APO / Peace, GARbro (game extraction), Krita, LibreOffice, Putty, WinSCP, OBS, SageMath, Surfshark, VLC, PCSX4, Choco
+Other Programs: Yuzu, Dolphin, JoyToStick, TextShot, VMWare, BlueStacks, GARbro (game extraction), Krita, Putty, WinSCP, , SageMath, Surfshark, VLC, PCSX4, Choco
   
   
 ### Windows  
