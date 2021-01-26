@@ -71,6 +71,10 @@ Notion
 Krita  
   
 Anki  
+
+OBS
+
+QMK
   	  	  
 IntelliJ (PyCharm, CLion, IntelliJ IDEA)  
   
@@ -79,12 +83,14 @@ IntelliJ (PyCharm, CLion, IntelliJ IDEA)
 	IdeaVim (see ideavimrc)  
   
 	Vim Emulator → `Alt + Z`  
+	
+Other Programs: Yuzu, Dolphin, JoyToStick, TextShot, VMWare, BlueStacks, GARbro (game extraction), Krita, Putty, WinSCP, , SageMath, Surfshark, VLC, PCSX4, Choco
   
   
 ### Windows  
 MikTeX, gVim , mupdf, SumatraPDF
   
-GARbro (game extraction)  
+
 
 PowerToys
 
@@ -189,7 +195,7 @@ Mouse: Logitech G600 MMO Mouse
   
 Mousepad: Logitech Hard  
   
-Phone: iPhone 6S Plus  
+Phone: iPhone 12 Pro Max, iPhone 6S Plus  
   
 Laptop: Mac Book Pro 2012  
   
@@ -243,4 +249,44 @@ SYSTEM SETTINGS
 		  
 		Use as F keys as standard function keys  
   
-
+## Anki Add-ons
+Crossed out ones are ones I disabled.
+* Anki Easy Mode (mine)
+* Advaned Browser
+* Anki Simulator
+* Anki Connect
+* ~Ankimote~
+* ~Advanced Card Styles~
+* Automatic Scoring
+* Always On Top
+* ~Anki Habitica for 21~
+* BetterSearch
+* Batch Editing
+* Custom Background Image
+* ~Change Order of Review Cards in Regular Decks~
+* Card Info During Review
+* ~Control Audio Playback Pause Skip backwardsforwards Stop Audio~
+* Customize Keyboard Shortcuts
+* ~Deck Stats~
+* Dancing Baloney
+* ~Edit Field During Review~
+* Fast cards reposition
+* ~HoochieMama Randomize Rev Queue~
+* ~Image Occlusion Enhanced for Anki 21 alpha~
+* ~Improved Quizlet to Anki 21 Importer~
+* Large and Colorful Buttons
+* ~Life Drain~
+* Migaku Retirement
+* ~More Decks Stats and Time Left~
+* ~More Overview Stats~
+* ~More Overview Stats 21~
+* ~Progress Graphs and Stats for Learned and Matured Cards~
+* Puppy Reinforcement
+* ~Remaining time for Anki 21~
+* Reset Card Scheduling
+* Reset Ease
+* ReviewHeatmap
+* Set Font Size
+* Speed Focus Mode auto-alert auto-reveal auto-fail
+* ~True Retention~
+* Zoom 21
