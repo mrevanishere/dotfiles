@@ -293,7 +293,7 @@ LaTeX Workshop
 
 	external pdf editor → zathura/sumatra/mupdf
 
-Atom Just Black Theme (easiest to read latex)
+Atom Just Black Theme (easiest to read latex) or Monokai Dimmed
 
 vsc-Conceal
 
