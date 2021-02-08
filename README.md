@@ -7,7 +7,7 @@ A place to hold all my settings for all programs / os / hardware that I use. Fee
 
 -  [General](#general)
 
--  [Keyboard Layout] (#layout
+-  [Keyboard Layout](#layout)
 
 -  [Ubuntu](#ubuntu)
 
