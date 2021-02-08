@@ -3,21 +3,159 @@
 A place to hold all my settings for all programs / os / hardware that I use. Feel free to use.
 
 # Content
--  [Vim](#vim)
+
 
 -  [General](#general)
 
--  [Windows](#windows)
-
--  [Station](#station)
+-  [Keyboard Layout] (#layout
 
 -  [Ubuntu](#ubuntu)
 
+-  [Windows](#windows)
+
+-  [VSCode](#vscode)
+
+-  [Station](#station)
+
 -  [MacOS](#macos)
 
-### Vim
+-  [Anki](#anki)
 
-See [vim-plug](https://github.com/junegunn/vim-plug) to install vim-plug
+-  [Vim](#vim)
+
+
+### Layout
+
+My keyboard layout setup with QMK.
+
+...
+
+### Ubuntu  
+
+[https://github.com/utkuufuk/ubuntu-on-steroids#other-tools](https://github.com/utkuufuk/ubuntu-on-steroids#other-tools)
+
+sudo apt intsall net-tools
+
+sudo apt install curl
+
+sudo apt install gdeb
+
+sudo apt install python3-pip
+
+	[https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
+
+	```cpp
+	bash Anaconda3-4.3.0-Linux-x86_64.sh; export PATH=~/anaconda3/bin:$PATH
+	```
+
+	[https://askubuntu.com/questions/885052/no-such-file-or-directory-encountered-trying-to-install-anaconda](https://askubuntu.com/questions/885052/no-such-file-or-directory-encountered-trying-to-install-anaconda)
+
+sudo apt install bspwm
+
+	also need something like PowerTools FancyZones (better window control)
+
+	also need something like PowerRename
+
+sudo add-apt-respository ppa:obsproject/obs-studio
+
+sudo apt install obs-studio
+
+sudo apt install git
+
+	Generate SSH key (or reuse existing key
+
+	Add SSH Key to Github adccount (skip if using existing key)
+
+Gnome Theme
+
+	sudo add-apt-repository -u ppa:snwh/ppa
+
+	sudo apt update
+
+	sudo apt install gnome-tweak-tool
+
+Settings
+
+	Disable smooth scrolling (fix mouse scroll in general)
+
+	gsettings set org.gnome.desktop.interface enable-animations false
+
+	Turn off middle click paste
+	
+	Nightlight  
+  
+	adawaita dark  
+  
+	desktop icons  
+	
+	icon size: smallest
+
+~~Vim-Perl-Python-TeX~~
+
+	sudo apt install texlive-latex-extra
+
+	~~sudo apt install texlive-extra-utils~~
+
+	~~sudo apt install perl~~
+
+	~~sudo apt install vim~~
+	
+VSCode - `sudo snap install code`
+
+Jetbrains
+
+PyCharm
+
+CLion
+
+IDEA
+
+Software
+
+Github Desktop → Dark mode
+
+	wget -qO - [https://packagecloud.io/shiftkey/desktop/gpgkey](https://packagecloud.io/shiftkey/desktop/gpgkey) | sudo apt-key add -; sudo sh -c 'echo "deb [arch=amd64] [https://packagecloud.io/shiftkey/desktop/any/](https://packagecloud.io/shiftkey/desktop/any/) any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'; sudo apt-get update; sudo apt install github-desktop
+
+	Github CLi
+
+Brave
+
+`snap install brave`
+
+Chrome (school/work)
+
+(wine) Notion → Dark mode
+
+Discord
+
+	`snap install discord`
+
+Zoom
+
+snippet / gif software (like sharex)
+
+sudo apt install wine
+  
+Audio:  
+  
+	Sound→Output→Digital Output (not analog)  
+	  
+	sudo apt-get install pavucontrolt  
+	  
+	pulseaudio -h  
+	  
+	pulseaudio -k  
+  
+	alsamixer, F6, lower PCM  
+  
+  
+
+  
+If problems on boot:  
+  
+	Hold shift while booting  
+	  
+	CTRL ALT F2 for terminalt  
 
 
 ### General  
@@ -29,52 +167,49 @@ Brave (Chrome, Opera, Edge, Unchromium)
 
 	Settings:
 
-		on exit: delete cache/cookies
-
 	Addons:
 
 		Vimium
 
-		DF Tube
-
-		Imagus
+		Vimium C PDF reader
 
 		Video Speed Controller
 
-			Decrease <
+				Decrease <
 
-			Increase >
+				Increase >
 
-			Opacity .35
+				Opacity .35
 
-		Volume Master
+		ublockorigin
 
-		Delayed Gratification
+		DfTube
 
-	Others:
+		~~ActivityWebWatcher~~
 
-		ublock origin
+		WebTimeTracker
 
-		Anki Adder
+		LeohNewTab
 
-		YomiChan
+		JetBrainsIDE Support
+
+		Imagus
+
+		Multi-Highlight
+
+		AutoTextExpander
+
+		Dark Reader
 
 		Leoh New Tab
 
-		Auto Text Expander + Overleaf + repl
-		Discord  
-  
-Git  
-  
-Notion  
-  
-Krita  
-  
-Anki  
+		Other
 
-OBS
+			YomiChan
 
-QMK
+			AnkiAdder
+  
+Essential: Git, Notion, Krita, Anki, OBS, QMK
   	  	  
 IntelliJ (PyCharm, CLion, IntelliJ IDEA)  
   
@@ -83,6 +218,8 @@ IntelliJ (PyCharm, CLion, IntelliJ IDEA)
 	IdeaVim (see ideavimrc)  
   
 	Vim Emulator → `Alt + Z`  
+	
+	Jupyter
 	
 Other Programs: Yuzu, Dolphin, JoyToStick, TextShot, VMWare, BlueStacks, GARbro (game extraction), Krita, Putty, WinSCP, , SageMath, Surfshark, VLC, PCSX4, Choco
   
@@ -139,8 +276,49 @@ ShareX (Windows)
 		Save Snip: Alt + Shift + X  
 		  
 		Save Vid: Alt + Shift + C  
+		
+### VSCode
+
+code . (open vscode in current director
+
+[https://github.com/viatsko/awesome-vscode](https://github.com/viatsko/awesome-vscode)
+
+	use jupyter notebooks in vscode
+
+	use jupyter notebooks in pycharm
+
+Python, C++, JS + Node, Jupyter, SQL, md
+
+LaTeX Workshop
+
+	external pdf editor → zathura/sumatra/mupdf
+
+Atom Just Black Theme (easiest to read latex)
+
+vsc-Conceal
+
+hypersnips or builtinsnips
+
+	if only using builtin snippets: [https://snippet-generator.app/](https://snippet-generator.app/)
+
+	[https://code.visualstudio.com/docs/editor/userdefinedsnippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+
+	[https://github.com/Einlar/latex_snippets/blob/master/hsnips/latex.hsnips](https://github.com/Einlar/latex_snippets/blob/master/hsnips/latex.hsnips)
+
+tabnine
+
+code runner
+
+~~vim~~
+
+	~~→ use vimrc~~
+
+	~~vanilla vimrc (no plugins + conceals?)~~
+
+	~~discord rich presence~~
+
     
-  ## Station  
+### Station  
   
 Chair:  
   
@@ -165,7 +343,7 @@ Monitor 2: Gateway 1920x1200 60Hz
   
 MOBO: MSI Z370 SLI Plus (MS-7B46) 2.0  
   
-SSD: Samsung 970 EVO  
+SSD: (2x) Samsung 970 EVO
   
 Headphones: HyperX Cloud  
   
@@ -199,39 +377,7 @@ Phone: iPhone 12 Pro Max, iPhone 6S Plus
   
 Laptop: Mac Book Pro 2012  
   
-Huion Inspiroy Q11K Wireless Graphic Drawing Tablet with 8192 Pressure Sensitivity
-  
-### Ubuntu  
-TeX
-  
-bspwm  
-  
-Audio:  
-  
-	Sound→Output→Digital Output (not analog)  
-	  
-	sudo apt-get install pavucontrolt  
-	  
-	pulseaudio -h  
-	  
-	pulseaudio -k  
-  
-	alsamixer, F6, lower PCM  
-  
-gnome-tweaks
-  
-Nightlight  
-  
-adawaita dark  
-  
-desktop icons  
-  
-If problems on boot:  
-  
-	Hold shift while booting  
-	  
-	CTRL ALT F2 for terminalt  
-  
+Huion Inspiroy Q11K Wireless Graphic Drawing Tablet with 8192 Pressure Sensitivity 
 
   
 ### MacOS  
@@ -290,3 +436,7 @@ Crossed out ones are ones I disabled.
 * Speed Focus Mode auto-alert auto-reveal auto-fail
 * ~True Retention~
 * Zoom 21
+
+### Vim
+
+See [vim-plug](https://github.com/junegunn/vim-plug) to install vim-plug
