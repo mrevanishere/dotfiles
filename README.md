@@ -294,6 +294,8 @@ LaTeX Workshop
 	external pdf editor → zathura/sumatra/mupdf
 
 Atom Just Black Theme (easiest to read latex) or Monokai Dimmed
+	
+	Vscode: Atom Just black for LaTeX, Default Dark for rest
 
 vsc-Conceal
 
