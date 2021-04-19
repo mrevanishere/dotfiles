@@ -265,6 +265,8 @@ Windows preferences:
 		  
 		No clock on Taskbar  
 		
+		Always give permission as admin (remove request admin permission screen)
+		
 		Change Langauge Locale → Language → Settings → Change System Locale
   
 ShareX (Windows)  
