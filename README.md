@@ -330,7 +330,7 @@ Desk:
   
 CPU: Intel Core it-8500 CPU @3.00 GHzb (6 core), UHD Graphics 630  
   
-GPU: EVGA XC RTX 2070, GTX 960  
+GPU: EVGA XC RTX 2070, GTX 960 Gigabyte 2GB 
   
 Monitor 1: Dell S-Series S2719DGF
   
