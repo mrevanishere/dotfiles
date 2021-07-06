@@ -399,7 +399,7 @@ SYSTEM SETTINGS
 		  
 		Use as F keys as standard function keys  
   
-## Anki Add-ons
+## Anki
 Crossed out ones are ones I disabled.
 * Anki Easy Mode (mine)
 * Advaned Browser
